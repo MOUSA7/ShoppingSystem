@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+$ca = Category::get();
 /*
 |--------------------------------------------------------------------------
 | Web Routes
