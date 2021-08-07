@@ -11,9 +11,8 @@
             <!-- Slide One - Set the background image for this slide in the line below -->
             @foreach($products as $key=>$product)
                 <div class="carousel-item {{$key == 2 ? 'active' : '' }}">
-
+                    <img src="https://i.pinimg.com/originals/79/98/e4/7998e4aa36f6bf78c6b15d6d30e279cf.jpg" width="100%" class="img-circle elevation-2" alt="User Image">
 {{--                    <img  width="100%" class="image" src="{{$product->image ? asset($product->image):url(asset('/frontend/img/1.jpg'))}}" alt="">--}}
-                    <img width="100%" class="image" src="https://i.pinimg.com/originals/79/98/e4/7998e4aa36f6bf78c6b15d6d30e279cf.jpg" alt="">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>{{$product->name}}</h3>
                         <p>{!! Str::limit($product->description,20) !!}</p>
@@ -54,7 +53,7 @@
                                     <h4 class="card-title text-center">
                                         <a href="#" style="font-size: 17px"><b>{{$product->name}}</b></a>
                                     </h4>
-                                    <p class="card-text text-center">{{Str::limit($product->description,80)}}</p>
+                                    <p class="card-text text-center">{!! Str::limit($product->description,80) !!}</p>
                                     <p class=" card-text text-center">Price : ${{$product->price}}</p>
                                 </div>
                                 <div class="card-footer text-center">
@@ -115,7 +114,7 @@
                                     <div class="card-body">
                                    <p><b>{{$product->name}}</b></p>
                                    <p class="card-text">
-                                       {!! Str::limit($product->description,17) !!}
+                                       {!! Str::limit($product->description,30) !!}
                                    </p>
                                    <div class="d-flex justify-content-between align-items-center">
                                        <div class="btn-group">
