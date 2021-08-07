@@ -12,8 +12,8 @@
             @foreach($products as $key=>$product)
                 <div class="carousel-item {{$key == 2 ? 'active' : '' }}">
 
-                    <img  width="100%" class="image" src="{{$product->image ? asset($product->image):url(asset('/frontend/img/1.jpg'))}}" alt="">
-
+{{--                    <img  width="100%" class="image" src="{{$product->image ? asset($product->image):url(asset('/frontend/img/1.jpg'))}}" alt="">--}}
+                    <img width="100%" class="image" src="https://i.pinimg.com/originals/79/98/e4/7998e4aa36f6bf78c6b15d6d30e279cf.jpg" alt="">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>{{$product->name}}</h3>
                         <p>{!! Str::limit($product->description,20) !!}</p>
@@ -48,8 +48,8 @@
                     @foreach($cat->products->take(3) as $product)
                         <div class="col-lg-4 col-sm-6 portfolio-item">
                             <div class="card h-100">
-                                <img class="card-img-top" src="{{asset($product->image)}}" alt="">
-
+{{--                                <img class="card-img-top" src="{{asset($product->image)}}" alt="">--}}
+                                <img class="card-img-top" src="https://pimpamacitycentre.com.au/wp-content/uploads/2018/09/web-slider.jpg" alt="">
                                 <div class="card-body">
                                     <h4 class="card-title text-center">
                                         <a href="#" style="font-size: 17px"><b>{{$product->name}}</b></a>
@@ -70,9 +70,12 @@
             </div>
         </section>
     @endforeach
+
     <div class="jumbotron">
 
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+            <br>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
@@ -80,7 +83,8 @@
 {{--                            <div class="col-4"></div>--}}
                             <div class="col-md-3">
                                 <div class="card mb-4 shadow-sm">
-                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">
+{{--                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">--}}
+                                    <img class="card-img-top" height="200"width="100%" src="https://www.beautyandfashionfreaks.com/wp-content/uploads/2018/08/Top-affordable-beauty-products-on-Amazon-US-beauty-and-fashion-freaks-1110x530.jpg" alt="">
                                     <div class="card-body">
                                         <p><b>{{$product->name}}</b></p>
                                         <p class="card-text">
@@ -105,8 +109,10 @@
                         @foreach($products as $product)
                             <div class="col-md-3">
                                 <div class="card mb-4 shadow-sm">
-                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">
-                               <div class="card-body">
+{{--                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">--}}
+                                    <img class="card-img-top" src="https://cdn.myimaginestore.com/media/catalog/product/cache/7/image/745x/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/iphone-12-2020.jpg" height="200"width="100%" alt="">
+
+                                    <div class="card-body">
                                    <p><b>{{$product->name}}</b></p>
                                    <p class="card-text">
                                        {!! Str::limit($product->description,17) !!}

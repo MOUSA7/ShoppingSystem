@@ -29,16 +29,19 @@ class DatabaseSeeder extends Seeder
             'phone' => 43214555,
             'lastName' => 'Alhlees'
         ],
-        [
-            'name'=>'Mousa',
-            'email'=>'mousa@hotmail.com',
-            'password'=>bcrypt('password'),
-            'role_id'=>1,
-            'phone' => 43214555,
-            'lastName' => 'Alshawwa'
-        ]
+
         );
 
+        User::create([
+            'name'=>'mousa',
+            'email'=>'mousa@hotmail.com',
+            'password'=>bcrypt('password'),
+            'is_admin'=>1,
+            'phone' => 43214555,
+            'lastName' => 'alshawwa'
+        ],
+
+        );
         $categories = ['laptop','Mobile','Television','Electronic','clothes','shoes'];
         foreach ($categories as $key=>$value){
             Category::create(['name'=>$value,'slug'=>Str::slug($value),

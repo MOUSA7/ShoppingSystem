@@ -26,7 +26,9 @@
     <x:notify-messages />
     @notifyJs
     <div class="container">
-        <a class="navbar-brand " href="{{route('home.index')}}" style="font-family: 'Courier New', Courier, monospace"><b>Shopping</b></a>
+        <a class="navbar-brand"  href="{{route('home.index')}}"  style="font-family: 'Courier New', Courier, monospace;">
+            <img style="margin-right: -20px;border-radius: 5px;"  src="{{asset('frontend/img/smart.png')}}" alt="">
+        </a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -101,6 +103,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{asset('frontend/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('frontend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 
 </body>
 

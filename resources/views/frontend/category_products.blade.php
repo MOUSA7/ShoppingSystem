@@ -20,7 +20,8 @@
                     @foreach($products as $product)
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">
+{{--                                <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">--}}
+                                <img class="card-img-top" src="https://www.hiatak.com/img/slider/s5.jpg" alt="" height="200"width="100%">
                                 <div class="card-body">
                                     <p><b>{{$product->name}}</b></p>
                                     <p class="card-text">

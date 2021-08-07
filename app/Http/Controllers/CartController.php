@@ -70,21 +70,36 @@ class CartController extends Controller
     }
 
     public function charge(Request $request){
+
+//        dd(Stripe::charges());
+//        Stripe::setApiKey("")
         $charge = Stripe::charges()->create([
-           'currency' => "USD",
-           'source'   => $request->stripeToken,
-           'amount'   => $request->amount,
-            'description'=>'Test'
+            'currency'=>"USD",
+            'source'=>$request->stripeToken,
+            'amount'=>$request->amount,
+            'description'=>'Shopping System'
         ]);
 
         $chargeId = $charge['id'];
-        if ($chargeId){
-            auth()->user()->orders()->create([
-               'cart' => serialize(session()->get('cart'))
-            ]);
-            session()->forget('cart');
-            notify()->success('!تم حذف السلعة بنجاح');
-            return redirect('/');
+        if(session()->has('cart')){
+            $cart = new Cart(session()->get('cart'));
+        }else{
+            $cart = null;
         }
+
+        if($chargeId){
+            auth()->user()->orders()->create([
+
+                'cart'=>serialize(session()->get('cart'))
+            ]);
+
+            session()->forget('cart');
+            notify()->success('! Transaction completed');
+            return redirect()->to('/');
+
+        }else{
+            return redirect()->back();
+        }
+
     }
 }

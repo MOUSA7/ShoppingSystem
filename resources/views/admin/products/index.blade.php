@@ -3,11 +3,11 @@
 @section('title')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark">لوحة التحكم</h1>
+            <h1 class="m-0 text-dark"><b>عرض المنتجات </b></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">عرض الأخبار</a></li>
+                <li class="breadcrumb-item"><a href="#">عرض المنتجات</a></li>
                 <li class="breadcrumb-item active">لوحة التحكم</li>
             </ol>
         </div><!-- /.col -->
@@ -24,7 +24,7 @@
                         <div class="input-group input-group-sm" style="width: 150px;">
                             <a href="{{route('admin.products.create')}}"  class="btn btn-success float-right">
                                 <i class="fa fa-plus"></i>
-                                أضافة خبر
+                                أضافة سلعة
                             </a>
                         </div>
                     </div>

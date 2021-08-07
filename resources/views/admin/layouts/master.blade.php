@@ -125,7 +125,8 @@
                 <x:notify-messages />
                 @notifyJs
                 <div class="image">
-                        <img src="{{asset(auth()->user()->image)}}" class="img-circle elevation-2" alt="User Image">
+{{--                        <img src="{{asset(auth()->user()->image)}}" class="img-circle elevation-2" alt="User Image">--}}
+                    <img class="img-circle elevation-2" src="https://www.sentara.com/Assets/Img/Find-a-Doctor/EPD/persons-benjamin-127570.jpg?width=710" alt="">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">{{Str::upper(auth()->user()->name).' '.auth()->user()->lastName}}</a>
@@ -177,7 +178,9 @@
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 المشرفين
-                                <span class="right badge badge-danger">New</span>
+                                <span class="right badge badge-danger">New
+                                {{\App\Models\User::latest()->take(2)->get()->count()}}
+                                </span>
                             </p>
                         </a>
                     </li>
