@@ -77,7 +77,7 @@ class CartController extends Controller
             'currency'=>"USD",
             'source'=>$request->stripeToken,
             'amount'=>$request->amount,
-            'description'=>'Shopping System'
+            'description'=>'ShoppingSystem'
         ]);
 
         $chargeId = $charge['id'];
