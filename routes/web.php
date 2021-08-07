@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-$ca = Category::get();
+//$ca = Category::get();
 /*
 |--------------------------------------------------------------------------
 | Web Routes
