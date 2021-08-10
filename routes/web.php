@@ -19,13 +19,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::resource('admin/products',\App\Http\Controllers\ProductController::class,['names'=>'admin.products']);
+Route::get('admin/subcategories/{id}/all',[\App\Http\Controllers\ProductController::class,'loadSubCategory'])->name('admin.subcategories.all');
 
 Route::prefix('admin')->middleware(['auth','admin'])->name('admin.')->group(function (){
     Route::get('/',[\App\Http\Controllers\HomeController::class,'dashboard'])->name('dashboard');
     Route::resource('categories',\App\Http\Controllers\CategoryController::class);
     Route::resource('subcategories',\App\Http\Controllers\SubCategoryController::class);
-    Route::resource('products',\App\Http\Controllers\ProductController::class);
-    Route::get('subcategories/{id}/all',[\App\Http\Controllers\ProductController::class,'loadSubCategory'])->name('subcategories.all');
 
     Route::resource('users',\App\Http\Controllers\UserController::class,['names'=>[
         Route::get('admin/users/{id}/delete',[\App\Http\Controllers\UserController::class,'destroy'])->name('users.delete')

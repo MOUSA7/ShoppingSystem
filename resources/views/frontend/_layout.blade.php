@@ -27,7 +27,7 @@
     @notifyJs
     <div class="container">
         <a class="navbar-brand"  href="{{route('home.index')}}"  style="font-family: 'Courier New', Courier, monospace;">
-            <img style="margin-right: -20px;border-radius: 5px;"  src="{{asset('frontend/img/smart.png')}}" alt="">
+            <img style="margin-right: -20px;border-radius: 5px; "  src="{{asset('frontend/img/se.png')}}" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">

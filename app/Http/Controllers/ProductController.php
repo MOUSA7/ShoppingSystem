@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function __construct(){
+        $this->middleware(['admin','auth'])->except(['index','edit','update','create','store','loadSubCategory']);
+    }
 
     public function index()
     {
@@ -48,7 +51,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        //
+       dd('show');
     }
 
 
