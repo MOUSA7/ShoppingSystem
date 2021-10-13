@@ -109,6 +109,11 @@
                                 @enderror
                             </div>
 
+                            <div class="form-group">
+                                <label for="customFile">Display On Slider : </label>
+                                <input type="checkbox" name="slider" class="custom-checkbox" value="1"{{$product->slider == 1?'checked':''}}>
+                            </div>
+
                             <div class="form-group text-center">
                                 <button type="submit" class="btn btn-primary btn-lg rounded-30">حفظ السلعة</button>
                             </div>

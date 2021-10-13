@@ -20,12 +20,12 @@
                     @foreach($products as $product)
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-{{--                                <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">--}}
-                                <img class="card-img-top" src="https://www.hiatak.com/img/slider/s5.jpg" alt="" height="200"width="100%">
+                                <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">
+{{--                                <img class="card-img-top" src="https://www.hiatak.com/img/slider/s5.jpg" alt="" height="200"width="100%">--}}
                                 <div class="card-body">
                                     <p><b>{{$product->name}}</b></p>
                                     <p class="card-text">
-                                        {!! Str::limit($product->description,17) !!}
+                                        {{ substr(strip_tags($product->description),0,30) }}
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">

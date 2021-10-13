@@ -77,6 +77,7 @@ class ProductController extends Controller
             $input['image'] = $image;
 
         }
+
         $product->update($input);
 
         notify()->success('!تم تعديل السلعة بنجاح');
@@ -97,6 +98,5 @@ class ProductController extends Controller
     public function loadSubCategory(Request $request,$id){
         $subcategory = SubCategory::where('category_id',$id)->pluck('name','id');
         return response()->json($subcategory);
-
     }
 }

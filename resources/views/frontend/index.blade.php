@@ -1,4 +1,5 @@
 @extends('frontend._layout')
+
 {{--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">--}}
 @section('header')
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -9,13 +10,13 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            @foreach($products as $key=>$product)
-                <div class="carousel-item {{$key == 2 ? 'active' : '' }}">
-                    <img src="https://i.pinimg.com/originals/79/98/e4/7998e4aa36f6bf78c6b15d6d30e279cf.jpg" width="100%" class="img-circle elevation-2" alt="User Image">
-{{--                    <img  width="100%" class="image" src="{{$product->image ? asset($product->image):url(asset('/frontend/img/1.jpg'))}}" alt="">--}}
+            @foreach($slider as $key=>$slide)
+                <div class="carousel-item {{$key == 1 ? 'active' : '' }}">
+{{--                    <img src="https://i.pinimg.com/originals/79/98/e4/7998e4aa36f6bf78c6b15d6d30e279cf.jpg" width="100%" class="img-circle elevation-2" alt="User Image">--}}
+                    <img  width="100%" class="image" src="{{$slide->image ? asset($slide->image):url(asset('/frontend/img/1.jpg'))}}" alt="">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3>{{$product->name}}</h3>
-                        <p>{!! Str::limit($product->description,20) !!}</p>
+                        <h3>{{$slide->name}}</h3>
+                        <p>{!! substr(strip_tags($slide->description), 0, 50) !!}</p>
                     </div>
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -47,13 +48,13 @@
                     @foreach($cat->products->take(3) as $product)
                         <div class="col-lg-4 col-sm-6 portfolio-item">
                             <div class="card h-100">
-{{--                                <img class="card-img-top" src="{{asset($product->image)}}" alt="">--}}
-                                <img class="card-img-top" src="https://pimpamacitycentre.com.au/wp-content/uploads/2018/09/web-slider.jpg" alt="">
+                                <img class="card-img-top" src="{{asset($product->image)}}" style="width: 100% !important;height: 260px !important;" alt="">
+{{--                                <img class="card-img-top" src="https://pimpamacitycentre.com.au/wp-content/uploads/2018/09/web-slider.jpg" alt="">--}}
                                 <div class="card-body">
                                     <h4 class="card-title text-center">
                                         <a href="#" style="font-size: 17px"><b>{{$product->name}}</b></a>
                                     </h4>
-                                    <p class="card-text text-center">{!! Str::limit($product->description,80) !!}</p>
+                                    <p class="card-text text-center">{!! substr(strip_tags($product->description), 0, 50) !!}</p>
                                     <p class=" card-text text-center">Price : ${{$product->price}}</p>
                                 </div>
                                 <div class="card-footer text-center">
@@ -82,17 +83,17 @@
 {{--                            <div class="col-4"></div>--}}
                             <div class="col-md-3">
                                 <div class="card mb-4 shadow-sm">
-{{--                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">--}}
-                                    <img class="card-img-top" height="200"width="100%" src="https://www.beautyandfashionfreaks.com/wp-content/uploads/2018/08/Top-affordable-beauty-products-on-Amazon-US-beauty-and-fashion-freaks-1110x530.jpg" alt="">
+                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">
+{{--                                    <img class="card-img-top" height="200"width="100%" src="https://www.beautyandfashionfreaks.com/wp-content/uploads/2018/08/Top-affordable-beauty-products-on-Amazon-US-beauty-and-fashion-freaks-1110x530.jpg" alt="">--}}
                                     <div class="card-body">
                                         <p><b>{{$product->name}}</b></p>
                                         <p class="card-text">
-                                            {!! Str::limit($product->description,17) !!}
+                                            {!! substr(strip_tags($product->description), 0, 50) !!}
                                         </p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-sm btn-outline-success">View</button>&nbsp;
-                                                <button type="button" class="btn btn-sm btn-outline-primary">Buy</button>
+                                                <a  href="{{route('home.add.cart',$product->id)}}" class="btn btn-sm btn-outline-primary">Buy</a>
                                             </div>
                                             <small class="text-muted">${{$product->price}}</small>
 
@@ -108,13 +109,13 @@
                         @foreach($products as $product)
                             <div class="col-md-3">
                                 <div class="card mb-4 shadow-sm">
-{{--                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">--}}
-                                    <img class="card-img-top" src="https://cdn.myimaginestore.com/media/catalog/product/cache/7/image/745x/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/iphone-12-2020.jpg" height="200"width="100%" alt="">
+                                    <img class="card-img-top" src="{{asset($product->image)}}" height="200"width="100%" alt="">
+{{--                                    <img class="card-img-top" src="https://cdn.myimaginestore.com/media/catalog/product/cache/7/image/745x/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/iphone-12-2020.jpg" height="200"width="100%" alt="">--}}
 
                                     <div class="card-body">
                                    <p><b>{{$product->name}}</b></p>
                                    <p class="card-text">
-                                       {!! Str::limit($product->description,30) !!}
+                                       {!! substr(strip_tags($product->description), 0, 50) !!}
                                    </p>
                                    <div class="d-flex justify-content-between align-items-center">
                                        <div class="btn-group">

@@ -104,6 +104,11 @@
                             </span>
                                 @enderror
                             </div>
+
+                            <div class="form-group">
+                                <label for="customFile">Display On Slider : </label>
+                                <input type="checkbox" name="slider" class="custom-checkbox" value="1">
+                            </div>
                             <br>
                             <div class="form-group text-center">
                                 <button type="submit" class="btn btn-success btn-lg rounded-30">حفظ السلعة</button>

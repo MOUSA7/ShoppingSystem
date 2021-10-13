@@ -26,7 +26,7 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required | min:3',
+            'name' => 'required | min:2',
             'category_id'=> 'required',
         ]);
 
@@ -58,7 +58,7 @@ class SubCategoryController extends Controller
         $sub = SubCategory::findOrFail($id);
 
         $this->validate($request,[
-            'name' => 'required | min:3',
+            'name' => 'required | min:2',
             'category_id'=> 'required',
         ]);
 

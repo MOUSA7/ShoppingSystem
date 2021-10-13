@@ -14,6 +14,7 @@ class CartController extends Controller
         $product = Product::whereId($id)->first();
         if (\session()->has('cart')){
             $cart = new Cart(\session()->get('cart'));
+//            dd(session()->get('cart'));
         }else{
             $cart = new Cart();
         }

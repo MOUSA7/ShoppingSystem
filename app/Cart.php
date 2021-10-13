@@ -33,11 +33,11 @@ class Cart{
         if (!array_key_exists($product->id,$this->items)){
             $this->items[$product->id] = $item;
             $this->totalQty+=1;
-            $this->totalPrice+=$product->price;
+            $this->totalPrice += (int)$product->price;
 
         }else{
             $this->totalQty+=1;
-            $this->totalPrice+=$product->price;
+            $this->totalPrice+=(int)$product->price;
         }
         $this->items[$product->id]['qty']+=1;
     }

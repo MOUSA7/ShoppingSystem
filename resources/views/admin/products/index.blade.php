@@ -52,7 +52,7 @@
                                     <td>{{$index +1}}</td>
                                     <td>{{$value->name}}</td>
                                     <td>{{'$'.$value->price}}</td>
-                                    <td>{!! Str::limit($value->description,22) !!}</td>
+                                    <td>{!! substr(strip_tags($value->description), 0, 50) !!}</td>
                                     <td>
                                         <img src="{{$value->image ? asset($value->image) :'Not Found'}}" height="60" width="70" alt="">
                                     </td>

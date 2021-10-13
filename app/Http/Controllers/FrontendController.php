@@ -12,6 +12,7 @@ class FrontendController extends Controller
 
     public function show($id)
     {
+//        dd('sad');
         $product = Product::findOrFail($id);
         $productSameCategory = Product::inRandomOrder()->where('category_id',$product->category_id)
             ->where('id','!=',$product->id)->limit(3)->get();

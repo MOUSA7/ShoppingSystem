@@ -67,11 +67,11 @@
         </div>
 
         @guest()
-            <a class="navbar-brand ml-auto" href="{{route('login')}}">Sign In</a>
+            <a class="navbar-brand ml-auto btn btn-primary" href="{{route('login')}}">تسجيل دخول</a>
         @else
             <li style="list-style: none;color: white" class="nav-item dropdown">
                 <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{auth()->user()->name}}&nbsp;{{auth()->user()->lastName}}
+                    {{Str::upper(auth()->user()->name)}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard</a>

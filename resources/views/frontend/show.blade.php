@@ -36,11 +36,11 @@
                     <h5 class="card-header text-center">تفاصيل السلعة</h5>
                     <div class="card-body" >
                         <div class="text-right">
-                            <h3><span class="badge badge-success"  style="font-size: 20px;"> إسم السلعة  </span> : {{$product->name}}</h3>
-                            <h3 class="d-flex"><span class="badge badge-success" style="font-size: 20px;">&nbsp; &nbsp; التفاصيل </span>   : {!! Str::limit($product->description,30) !!}</h3>
-                            <h3><span class="badge badge-success"  style="font-size: 20px;">&nbsp; &nbsp; السعر   </span> : <span style="color: red">{{'$'.$product->price}}</span></h3>
-                            <h3> <span class="badge badge-success" style="font-size: 20px;">التصنيف   </span> : {{$product->category->name}}</h3>
-                            <h3> <span class="badge badge-success" style="font-size: 20px;">التصنيف الفرعي   </span> : {{$product->subcategory->name}}</h3>
+                            <h3 > <p class="inline-flex" style="font-size: 20px;">&nbsp; &nbsp; السلعة </p>   : {{$product->name}}</h3>
+                            <h3 > <p class="inline-flex" style="font-size: 20px;">&nbsp; &nbsp; التفاصيل </p>  : {{ substr(strip_tags($product->description),0,30) }}</h3>
+                            <h3>  <p class="inline-flex" style="font-size: 20px;">&nbsp; &nbsp; السعر </p>  : <span style="color: red">{{'$'.$product->price}}</span></h3>
+                            <h3>  <p class="inline-flex" style="font-size: 20px;">&nbsp; &nbsp; التصنيف </p>  : {{$product->category->name}}</h3>
+                            <h3>  <p class="inline-flex" style="font-size: 20px;">&nbsp; &nbsp; التصنيف الفرعي </p>  : {{$product->subcategory->name}}</h3>
                         </div>
                         <br>
                         <form action="#" method="post">
@@ -65,8 +65,10 @@
 
     </div>
     <div class="jumbotron">
-        <h3 class="text-right"><b>The Same Category</b></h3>
+        <h3 class="text-right"><b>التصنيفات المشابهة </b></h3>
+        <br>
         <hr>
+        <br>
         <div class="row">
             @foreach($productSameCategory as $product)
                 <div class="col-md-3">
@@ -75,7 +77,7 @@
                         <div class="card-body">
                             <p><b>{{$product->name}}</b></p>
                             <p class="card-text">
-                                {!! Str::limit($product->description,20) !!}
+                                {{ substr(strip_tags($product->description),0,30) }}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
