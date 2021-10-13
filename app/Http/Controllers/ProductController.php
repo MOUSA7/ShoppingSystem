@@ -97,6 +97,5 @@ class ProductController extends Controller
     public function loadSubCategory(Request $request,$id){
         $subcategory = SubCategory::where('category_id',$id)->pluck('name','id');
         return response()->json($subcategory);
-
     }
 }
